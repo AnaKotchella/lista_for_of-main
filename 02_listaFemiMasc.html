@@ -8,14 +8,25 @@
     //ENTRADA
 
     let listaDeNomes = ["João", "Maria", "José", "Amanda", "Beatriz", "Júlio", "Olívia"];
-    let genero = M-Masculino || F-Feminino;
-
+    
     //PROCESSAMENTO
-
-    for (genero of listaDeNomes){
-        (joão == genero)?("masculino"):("feminino");
+    let nomesFemininos = [];
+    let nomesMasculinos = [];
+    let invalidos = [];
+    for (let nome of listaDeNomes){
+        const mascFem = prompt(`Informe se o nome ${nome} é F-Feminino ou M-Masculino:`).toUpperCase().trim();
+        if (mascFem == "M") {
+            nomesMasculinos.push(nome);
+        }
+        else if (mascFem == "F") {
+            nomesFemininos.push(nome);
+        }
+        else {
+            invalidos.push(nome);
+        }
     }
     
     //SAÍDA
-
+    document.write(`Os nomes femininos são: ${nomesFemininos.join(", ")}<br>`);
+    document.write(`os nomes masculinos são: ${nomesMasculinos.join(", ")}<br>`);
 </script>
